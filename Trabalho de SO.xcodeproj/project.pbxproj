@@ -10,6 +10,7 @@
 		A3658F961B025B1E00448553 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = A3658F951B025B1E00448553 /* main.c */; };
 		A3658FA31B025BE000448553 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = A3658FA21B025BE000448553 /* main.c */; };
 		A3658FA91B025F7600448553 /* jogoPrincipal.c in Sources */ = {isa = PBXBuildFile; fileRef = A3658FA81B025F7600448553 /* jogoPrincipal.c */; };
+		A3658FAC1B02630500448553 /* utils.c in Sources */ = {isa = PBXBuildFile; fileRef = A3658FAA1B02630500448553 /* utils.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -40,6 +41,8 @@
 		A3658FA21B025BE000448553 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		A3658FA71B025F6600448553 /* jogoPrincipal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jogoPrincipal.h; sourceTree = "<group>"; };
 		A3658FA81B025F7600448553 /* jogoPrincipal.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = jogoPrincipal.c; sourceTree = "<group>"; };
+		A3658FAA1B02630500448553 /* utils.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = utils.c; sourceTree = "<group>"; };
+		A3658FAB1B02630500448553 /* utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utils.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +87,8 @@
 				A3658F951B025B1E00448553 /* main.c */,
 				A3658FA71B025F6600448553 /* jogoPrincipal.h */,
 				A3658FA81B025F7600448553 /* jogoPrincipal.c */,
+				A3658FAA1B02630500448553 /* utils.c */,
+				A3658FAB1B02630500448553 /* utils.h */,
 			);
 			path = "Trabalho de SO";
 			sourceTree = "<group>";
@@ -173,6 +178,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3658FAC1B02630500448553 /* utils.c in Sources */,
 				A3658F961B025B1E00448553 /* main.c in Sources */,
 				A3658FA91B025F7600448553 /* jogoPrincipal.c in Sources */,
 			);
