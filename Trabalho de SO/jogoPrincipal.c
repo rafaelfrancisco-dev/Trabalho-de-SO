@@ -9,14 +9,26 @@
 #include "jogoPrincipal.h"
 
 void carregarDados(){
+    char buffer[999];
+    FILE *file;
     
+    file = fopen("db.txt", "r");
+    fscanf(file, "%s", buffer);
+    printf("A carregar %d salas...\n", atoi(buffer));
+    
+    if (file) {
+        while (fscanf(file, "%s", buffer)!=EOF){
+            
+        }
+        fclose(file);
+    }
 }
 
 void comecarJogo(){
-    char* nome;
+    char nome[25];
     
     carregarDados();
     
     printf("Nome do jogador ?\n");
-    scanf("%s", nome);
+    scanf("%s", &nome);
 }
