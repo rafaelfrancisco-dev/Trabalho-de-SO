@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Trabalho de SO Servidor.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>Trabalho de SO.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -13,6 +18,11 @@
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>A3658F911B025B1E00448553</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A3658F9F1B025BE000448553</key>
 		<dict>
 			<key>primary</key>
 			<true/>

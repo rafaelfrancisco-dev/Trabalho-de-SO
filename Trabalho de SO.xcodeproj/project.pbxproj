@@ -8,10 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		A3658F961B025B1E00448553 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = A3658F951B025B1E00448553 /* main.c */; };
+		A3658FA31B025BE000448553 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = A3658FA21B025BE000448553 /* main.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		A3658F901B025B1E00448553 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		A3658F9E1B025BE000448553 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -25,10 +35,19 @@
 /* Begin PBXFileReference section */
 		A3658F921B025B1E00448553 /* Trabalho de SO */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Trabalho de SO"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3658F951B025B1E00448553 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		A3658FA01B025BE000448553 /* Trabalho de SO Servidor */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Trabalho de SO Servidor"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A3658FA21B025BE000448553 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		A3658F8F1B025B1E00448553 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A3658F9D1B025BE000448553 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -42,6 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				A3658F941B025B1E00448553 /* Trabalho de SO */,
+				A3658FA11B025BE000448553 /* Trabalho de SO Servidor */,
 				A3658F931B025B1E00448553 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -50,6 +70,7 @@
 			isa = PBXGroup;
 			children = (
 				A3658F921B025B1E00448553 /* Trabalho de SO */,
+				A3658FA01B025BE000448553 /* Trabalho de SO Servidor */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -60,6 +81,14 @@
 				A3658F951B025B1E00448553 /* main.c */,
 			);
 			path = "Trabalho de SO";
+			sourceTree = "<group>";
+		};
+		A3658FA11B025BE000448553 /* Trabalho de SO Servidor */ = {
+			isa = PBXGroup;
+			children = (
+				A3658FA21B025BE000448553 /* main.c */,
+			);
+			path = "Trabalho de SO Servidor";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -82,6 +111,23 @@
 			productReference = A3658F921B025B1E00448553 /* Trabalho de SO */;
 			productType = "com.apple.product-type.tool";
 		};
+		A3658F9F1B025BE000448553 /* Trabalho de SO Servidor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A3658FA41B025BE000448553 /* Build configuration list for PBXNativeTarget "Trabalho de SO Servidor" */;
+			buildPhases = (
+				A3658F9C1B025BE000448553 /* Sources */,
+				A3658F9D1B025BE000448553 /* Frameworks */,
+				A3658F9E1B025BE000448553 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Trabalho de SO Servidor";
+			productName = "Trabalho de SO Servidor";
+			productReference = A3658FA01B025BE000448553 /* Trabalho de SO Servidor */;
+			productType = "com.apple.product-type.tool";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -92,6 +138,9 @@
 				ORGANIZATIONNAME = "Rafael Lopes Francisco";
 				TargetAttributes = {
 					A3658F911B025B1E00448553 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					A3658F9F1B025BE000448553 = {
 						CreatedOnToolsVersion = 6.1.1;
 					};
 				};
@@ -109,6 +158,7 @@
 			projectRoot = "";
 			targets = (
 				A3658F911B025B1E00448553 /* Trabalho de SO */,
+				A3658F9F1B025BE000448553 /* Trabalho de SO Servidor */,
 			);
 		};
 /* End PBXProject section */
@@ -119,6 +169,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3658F961B025B1E00448553 /* main.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A3658F9C1B025BE000448553 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A3658FA31B025BE000448553 /* main.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,6 +271,24 @@
 			};
 			name = Release;
 		};
+		A3658FA51B025BE000448553 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A3658FA61B025BE000448553 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -230,6 +306,14 @@
 			buildConfigurations = (
 				A3658F9A1B025B1E00448553 /* Debug */,
 				A3658F9B1B025B1E00448553 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		A3658FA41B025BE000448553 /* Build configuration list for PBXNativeTarget "Trabalho de SO Servidor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A3658FA51B025BE000448553 /* Debug */,
+				A3658FA61B025BE000448553 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
