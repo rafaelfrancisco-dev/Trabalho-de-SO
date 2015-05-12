@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A3658F961B025B1E00448553 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = A3658F951B025B1E00448553 /* main.c */; };
 		A3658FA31B025BE000448553 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = A3658FA21B025BE000448553 /* main.c */; };
+		A3658FA91B025F7600448553 /* jogoPrincipal.c in Sources */ = {isa = PBXBuildFile; fileRef = A3658FA81B025F7600448553 /* jogoPrincipal.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -37,6 +38,8 @@
 		A3658F951B025B1E00448553 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		A3658FA01B025BE000448553 /* Trabalho de SO Servidor */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Trabalho de SO Servidor"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3658FA21B025BE000448553 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		A3658FA71B025F6600448553 /* jogoPrincipal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jogoPrincipal.h; sourceTree = "<group>"; };
+		A3658FA81B025F7600448553 /* jogoPrincipal.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = jogoPrincipal.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +82,8 @@
 			isa = PBXGroup;
 			children = (
 				A3658F951B025B1E00448553 /* main.c */,
+				A3658FA71B025F6600448553 /* jogoPrincipal.h */,
+				A3658FA81B025F7600448553 /* jogoPrincipal.c */,
 			);
 			path = "Trabalho de SO";
 			sourceTree = "<group>";
@@ -169,6 +174,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3658F961B025B1E00448553 /* main.c in Sources */,
+				A3658FA91B025F7600448553 /* jogoPrincipal.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

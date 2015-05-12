@@ -7,9 +7,29 @@
 //
 
 #include <stdio.h>
+#include <stdlib.h>
+#include "jogoPrincipal.h"
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    printf("Hello, World!\n");
-    return 0;
+    int escolha;
+    
+    printf("SO 14/15\n");
+    printf("1 - Começar o jogo\n");
+    printf("2 - Não implementado\n");
+    printf("3 - Sair\n");
+    
+    scanf("%d", &escolha);
+    
+    switch (escolha) {
+        case 1:
+            comecarJogo();
+            break;
+        case 2:
+            break;
+        case 3:
+            exit(0);
+            break;
+        default:
+            break;
+    }
 }
