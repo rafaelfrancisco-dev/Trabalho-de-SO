@@ -10,10 +10,23 @@
 #define Trabalho_de_SO_jogoPrincipal_h
 #define NUM_TAGS 10
 
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct monstro{
+    int ID;
+    int tipo;
+    int presente;
+}monstro;
+
 typedef struct sala{
     int ID;
     char* desc;
+    char* killFeed;
+    char* sucessFeed;
+    char* comandosValidos;
     char* tagsEfeito[NUM_TAGS];
+    monstro m;
     struct sala *next;
 }sala;
 
@@ -22,6 +35,7 @@ typedef struct dungeon{
     sala salas[];
 }dungeon;
 
+void carregarDados();
 void comecarJogo();
 
 #endif

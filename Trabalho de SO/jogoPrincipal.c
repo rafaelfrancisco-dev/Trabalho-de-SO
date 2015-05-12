@@ -8,6 +8,15 @@
 
 #include "jogoPrincipal.h"
 
-void comecarJogo(){
+void carregarDados(){
     
+}
+
+void comecarJogo(){
+    char* nome;
+    
+    carregarDados();
+    
+    printf("Nome do jogador ?\n");
+    scanf("%s", nome);
 }
