@@ -35,7 +35,7 @@ typedef struct dungeon{
     sala salas[];
 }dungeon;
 
-void carregarDados();
+sala * carregarDados();
 void comecarJogo();
 
 #endif
