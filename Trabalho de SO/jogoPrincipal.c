@@ -20,6 +20,7 @@ void comecarJogo(){
     
     masmorra = fazerDungeon(salas);
     alocarMonstro(masmorra);
+    ligarServer();
 }
 
 dungeon fazerDungeon(sala *salas){
@@ -47,4 +48,16 @@ dungeon fazerDungeon(sala *salas){
 
 void alocarMonstro(dungeon masmorra){
     
+}
+
+void ligarServer(){
+    int client_to_server;
+    char *myfifo = "/tmp/client_to_server_fifo";
+    
+    int server_to_client;
+    char *myfifo2 = "/tmp/server_to_client_fifo";
+    
+    /* write str to the FIFO */
+    client_to_server = open(myfifo, O_WRONLY);
+    server_to_client = open(myfifo2, O_RDONLY);
 }

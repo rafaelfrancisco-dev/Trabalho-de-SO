@@ -9,6 +9,8 @@
 #ifndef Trabalho_de_SO_jogoPrincipal_h
 #define Trabalho_de_SO_jogoPrincipal_h
 
+#include <sys/types.h>
+#include <unistd.h>
 #include "io.h"
 #include "utils.h"
 
@@ -23,5 +25,7 @@ dungeon fazerDungeon(sala *salas);
 void alocarMonstro(dungeon masmorra);
 
 void jogo();
+
+void ligarServer();
 
 #endif

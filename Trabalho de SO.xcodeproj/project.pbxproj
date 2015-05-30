@@ -53,6 +53,7 @@
 		A3F7D5EE1B19D54800951A92 /* serverEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = serverEngine.h; sourceTree = "<group>"; };
 		A3F7D5F01B19D67500951A92 /* utils.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = utils.c; sourceTree = "<group>"; };
 		A3F7D5F11B19D67500951A92 /* utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utils.h; sourceTree = "<group>"; };
+		A3F7D5F31B19DC7500951A92 /* struct_defs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = struct_defs.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +115,7 @@
 				A3F7D5EE1B19D54800951A92 /* serverEngine.h */,
 				A3F7D5F01B19D67500951A92 /* utils.c */,
 				A3F7D5F11B19D67500951A92 /* utils.h */,
+				A3F7D5F31B19DC7500951A92 /* struct_defs.h */,
 			);
 			path = "Trabalho de SO Servidor";
 			sourceTree = "<group>";
