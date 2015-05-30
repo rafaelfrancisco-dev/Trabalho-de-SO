@@ -9,5 +9,7 @@
 #include "serverEngine.h"
 
 void startServer(){
-    
+    do{
+        
+    }while(true);
 }

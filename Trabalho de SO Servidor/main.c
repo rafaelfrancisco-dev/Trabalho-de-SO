@@ -8,9 +8,13 @@
 
 #include <stdio.h>
 #include "serverEngine.h"
+#include "utils.h"
 
 int main(int argc, const char * argv[]) {
+    only_one_instance();
+    
     printf("Servidor iniciado...\n");
     startServer();
+    
     return 0;
 }
