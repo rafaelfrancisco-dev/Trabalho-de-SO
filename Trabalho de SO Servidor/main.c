@@ -7,9 +7,10 @@
 //
 
 #include <stdio.h>
+#include "serverEngine.h"
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    printf("Hello, World!\n");
+    printf("Servidor iniciado...\n");
+    startServer();
     return 0;
 }
