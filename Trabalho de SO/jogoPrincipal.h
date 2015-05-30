@@ -8,35 +8,20 @@
 
 #ifndef Trabalho_de_SO_jogoPrincipal_h
 #define Trabalho_de_SO_jogoPrincipal_h
-#define TAM 256
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include "io.h"
+#include "utils.h"
 
-typedef struct monstro{
-    int ID;
-    int tipo;
-    int presente;
-}monstro;
+typedef struct motorJogo{
+    dungeon masmorra;
+}motorJogo;
 
-typedef struct sala{
-    int ID;
-    char desc[TAM];
-    char killFeed[TAM];
-    char sucessFeed[TAM];
-    char comandosValidos[TAM];
-    char tagsEfeito[TAM];
-    monstro m;
-    struct sala *next;
-}sala;
-
-typedef struct dungeon{
-    int num_salas;
-    sala salas[];
-}dungeon;
-
-sala * carregarDados();
 void comecarJogo();
+
+dungeon fazerDungeon(sala *salas);
+
+void alocarMonstro(dungeon masmorra);
+
+void jogo();
 
 #endif

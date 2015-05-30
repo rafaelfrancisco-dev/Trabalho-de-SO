@@ -8,68 +8,43 @@
 
 #include "jogoPrincipal.h"
 
-sala * carregarDados(){
-    int i, numSalas;
-    char buffer[256];
-    sala *head = NULL;
-    FILE *file;
-    
-    file = fopen("db.txt", "r");
-    fscanf(file, "%s", buffer);
-    printf("A carregar %d salas...\n", atoi(buffer));
-    numSalas = atoi(buffer);
-    
-    head = malloc(sizeof(sala));
-    
-    if (file) {
-        fgets(buffer, sizeof(buffer), file);
-        
-        for(i =0;i<numSalas;i++){
-            sala * current = head;
-            while (current->next != NULL) {
-                current = current->next;
-            }
-            
-            current->next = malloc(sizeof(sala));
-            
-            fgets(buffer, sizeof(buffer), file);
-            current->next->ID = atoi(buffer);
-            
-            fgets(buffer, sizeof(buffer), file);
-            buffer[strcspn(buffer, "\n")] = 0;
-            strcpy(current->next->desc, buffer);
-            
-            fgets(buffer, sizeof(buffer), file);
-            buffer[strcspn(buffer, "\n")] = 0;
-            strcpy(current->next->killFeed, buffer);
-            
-            fgets(buffer, sizeof(buffer), file);
-            buffer[strcspn(buffer, "\n")] = 0;
-            strcpy(current->next->sucessFeed, buffer);
-            
-            fgets(buffer, sizeof(buffer), file);
-            buffer[strcspn(buffer, "\n")] = 0;
-            strcpy(current->next->comandosValidos, buffer);
-            
-            fgets(buffer, sizeof(buffer), file);
-            buffer[strcspn(buffer, "\n")] = 0;
-            strcpy(current->next->tagsEfeito, buffer);
-            
-            current->next->next = NULL;
-        }
-        fclose(file);
-    }
-    
-    head = head->next;
-    return head;
-}
-
 void comecarJogo(){
     char nome[256];
     sala *salas;
+    dungeon masmorra;
     
     salas = carregarDados();
     
     printf("Nome do jogador ?\n");
-    fgets(nome, sizeof(nome), stdin);
+    scanf("%s", nome);
+    
+    masmorra = fazerDungeon(salas);
+    alocarMonstro(masmorra);
+}
+
+dungeon fazerDungeon(sala *salas){
+    int i;
+    dungeon masmorra;
+    
+    masmorra.salas = malloc(count(salas)*sizeof(sala));
+    masmorra.num_salas = count(salas);
+    
+    for (i = 0; i<masmorra.num_salas; i++) {
+        sala *current = salas;
+        
+        masmorra.salas[i].ID = current->ID;
+        strcpy(masmorra.salas[i].desc, current->desc);
+        strcpy(masmorra.salas[i].killFeed, current->killFeed);
+        strcpy(masmorra.salas[i].sucessFeed, current->sucessFeed);
+        strcpy(masmorra.salas[i].tagsEfeito, current->tagsEfeito);
+        strcpy(masmorra.salas[i].comandosValidos, current->comandosValidos);
+        
+        current = current->next;
+    }
+    
+    return masmorra;
+}
+
+void alocarMonstro(dungeon masmorra){
+    
 }
