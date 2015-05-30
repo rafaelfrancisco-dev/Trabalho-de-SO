@@ -8,10 +8,11 @@
 
 #ifndef Trabalho_de_SO_jogoPrincipal_h
 #define Trabalho_de_SO_jogoPrincipal_h
-#define NUM_TAGS 10
+#define TAM 256
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 typedef struct monstro{
     int ID;
@@ -21,11 +22,11 @@ typedef struct monstro{
 
 typedef struct sala{
     int ID;
-    char* desc;
-    char* killFeed;
-    char* sucessFeed;
-    char* comandosValidos;
-    char* tagsEfeito[NUM_TAGS];
+    char desc[TAM];
+    char killFeed[TAM];
+    char sucessFeed[TAM];
+    char comandosValidos[TAM];
+    char tagsEfeito[TAM];
     monstro m;
     struct sala *next;
 }sala;

@@ -10,7 +10,7 @@
 
 sala * carregarDados(){
     int i, numSalas;
-    char buffer[999];
+    char buffer[256];
     sala *head = NULL;
     FILE *file;
     
@@ -22,6 +22,8 @@ sala * carregarDados(){
     head = malloc(sizeof(sala));
     
     if (file) {
+        fgets(buffer, sizeof(buffer), file);
+        
         for(i =0;i<numSalas;i++){
             sala * current = head;
             while (current->next != NULL) {
@@ -30,26 +32,39 @@ sala * carregarDados(){
             
             current->next = malloc(sizeof(sala));
             
-            fscanf(file, "%s", buffer);
-            current->next->desc = buffer;
+            fgets(buffer, sizeof(buffer), file);
+            current->next->ID = atoi(buffer);
             
-            fscanf(file, "%s", buffer);
-            current->next->killFeed = buffer;
+            fgets(buffer, sizeof(buffer), file);
+            strcpy(current->next->desc, buffer);
+            
+            fgets(buffer, sizeof(buffer), file);
+            strcpy(current->next->killFeed, buffer);
+            
+            fgets(buffer, sizeof(buffer), file);
+            strcpy(current->next->sucessFeed, buffer);
+            
+            fgets(buffer, sizeof(buffer), file);
+            strcpy(current->next->comandosValidos, buffer);
+            
+            fgets(buffer, sizeof(buffer), file);
+            strcpy(current->next->tagsEfeito, buffer);
             
             current->next->next = NULL;
         }
         fclose(file);
     }
     
+    head = head->next;
     return head;
 }
 
 void comecarJogo(){
-    char nome[25];
+    char nome[256];
     sala *salas;
     
     salas = carregarDados();
     
     printf("Nome do jogador ?\n");
-    scanf("%s", &nome);
+    fgets(nome, sizeof(nome), stdin);
 }
