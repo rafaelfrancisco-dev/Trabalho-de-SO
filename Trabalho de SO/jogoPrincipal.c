@@ -11,11 +11,25 @@
 void comecarJogo(){
     char nome[256];
     sala *salas;
+    dungeon masmorra;
     
     salas = carregarDados();
     
     printf("Nome do jogador ?\n");
     scanf("%s", nome);
     
+    masmorra = fazerDungeon(salas);
+    alocarMonstro(masmorra);
+}
+
+dungeon fazerDungeon(sala *salas){
+    dungeon masmorra;
+    
+    masmorra.num_salas = count(salas);
+    
+    return masmorra;
+}
+
+void alocarMonstro(dungeon masmorra){
     
 }

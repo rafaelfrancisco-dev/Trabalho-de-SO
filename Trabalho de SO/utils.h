@@ -10,5 +10,8 @@
 #define __Trabalho_de_SO__utils__
 
 #include <stdio.h>
+#include "structs_defs.h"
+
+int count(sala *head);
 
 #endif /* defined(__Trabalho_de_SO__utils__) */

@@ -8,6 +8,7 @@
 
 #ifndef Trabalho_de_SO_Header_h
 #define Trabalho_de_SO_Header_h
+#define TAM 256
 
 typedef struct monstro{
     int ID;

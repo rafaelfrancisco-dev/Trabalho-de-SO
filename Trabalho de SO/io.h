@@ -8,7 +8,6 @@
 
 #ifndef __Trabalho_de_SO__io__
 #define __Trabalho_de_SO__io__
-#define TAM 256
 
 #include <stdio.h>
 #include <stdlib.h>

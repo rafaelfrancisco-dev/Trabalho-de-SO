@@ -7,3 +7,16 @@
 //
 
 #include "utils.h"
+
+int count(sala *head)
+{
+    sala *n;
+    int c=0;
+    n=head;
+    while(n!=NULL)
+    {
+        n=n->next;
+        c++;
+    }
+    return c;
+}

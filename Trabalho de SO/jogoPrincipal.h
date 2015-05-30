@@ -10,7 +10,18 @@
 #define Trabalho_de_SO_jogoPrincipal_h
 
 #include "io.h"
+#include "utils.h"
+
+typedef struct motorJogo{
+    dungeon masmorra;
+}motorJogo;
 
 void comecarJogo();
+
+dungeon fazerDungeon(sala *salas);
+
+void alocarMonstro(dungeon masmorra);
+
+void jogo();
 
 #endif
