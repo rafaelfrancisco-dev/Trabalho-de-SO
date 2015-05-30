@@ -36,18 +36,23 @@ sala * carregarDados(){
             current->next->ID = atoi(buffer);
             
             fgets(buffer, sizeof(buffer), file);
+            buffer[strcspn(buffer, "\n")] = 0;
             strcpy(current->next->desc, buffer);
             
             fgets(buffer, sizeof(buffer), file);
+            buffer[strcspn(buffer, "\n")] = 0;
             strcpy(current->next->killFeed, buffer);
             
             fgets(buffer, sizeof(buffer), file);
+            buffer[strcspn(buffer, "\n")] = 0;
             strcpy(current->next->sucessFeed, buffer);
             
             fgets(buffer, sizeof(buffer), file);
+            buffer[strcspn(buffer, "\n")] = 0;
             strcpy(current->next->comandosValidos, buffer);
             
             fgets(buffer, sizeof(buffer), file);
+            buffer[strcspn(buffer, "\n")] = 0;
             strcpy(current->next->tagsEfeito, buffer);
             
             current->next->next = NULL;
