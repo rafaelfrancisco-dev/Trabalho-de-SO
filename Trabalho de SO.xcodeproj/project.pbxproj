@@ -12,6 +12,8 @@
 		A3658FA91B025F7600448553 /* jogoPrincipal.c in Sources */ = {isa = PBXBuildFile; fileRef = A3658FA81B025F7600448553 /* jogoPrincipal.c */; };
 		A3658FAC1B02630500448553 /* utils.c in Sources */ = {isa = PBXBuildFile; fileRef = A3658FAA1B02630500448553 /* utils.c */; };
 		A3F7D5EB1B19C84B00951A92 /* io.c in Sources */ = {isa = PBXBuildFile; fileRef = A3F7D5E91B19C84B00951A92 /* io.c */; };
+		A3F7D5EF1B19D54800951A92 /* serverEngine.c in Sources */ = {isa = PBXBuildFile; fileRef = A3F7D5ED1B19D54800951A92 /* serverEngine.c */; };
+		A3F7D5F21B19D67500951A92 /* utils.c in Sources */ = {isa = PBXBuildFile; fileRef = A3F7D5F01B19D67500951A92 /* utils.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -47,6 +49,10 @@
 		A3F7D5E91B19C84B00951A92 /* io.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = io.c; sourceTree = "<group>"; };
 		A3F7D5EA1B19C84B00951A92 /* io.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = io.h; sourceTree = "<group>"; };
 		A3F7D5EC1B19C8E100951A92 /* structs_defs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = structs_defs.h; sourceTree = "<group>"; };
+		A3F7D5ED1B19D54800951A92 /* serverEngine.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = serverEngine.c; sourceTree = "<group>"; };
+		A3F7D5EE1B19D54800951A92 /* serverEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = serverEngine.h; sourceTree = "<group>"; };
+		A3F7D5F01B19D67500951A92 /* utils.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = utils.c; sourceTree = "<group>"; };
+		A3F7D5F11B19D67500951A92 /* utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utils.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +110,10 @@
 			isa = PBXGroup;
 			children = (
 				A3658FA21B025BE000448553 /* main.c */,
+				A3F7D5ED1B19D54800951A92 /* serverEngine.c */,
+				A3F7D5EE1B19D54800951A92 /* serverEngine.h */,
+				A3F7D5F01B19D67500951A92 /* utils.c */,
+				A3F7D5F11B19D67500951A92 /* utils.h */,
 			);
 			path = "Trabalho de SO Servidor";
 			sourceTree = "<group>";
@@ -196,6 +206,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3F7D5F21B19D67500951A92 /* utils.c in Sources */,
+				A3F7D5EF1B19D54800951A92 /* serverEngine.c in Sources */,
 				A3658FA31B025BE000448553 /* main.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
