@@ -29,7 +29,7 @@ typedef struct sala{
 
 typedef struct dungeon{
     int num_salas;
-    sala salas[];
+    sala *salas;
 }dungeon;
 
 #endif
