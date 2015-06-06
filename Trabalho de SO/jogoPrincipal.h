@@ -16,7 +16,7 @@
 #include "io.h"
 #include "utils.h"
 
-#define MAX_BUF 1024
+#define MAX_BUF 512
 
 typedef struct motorJogo{
     dungeon masmorra;

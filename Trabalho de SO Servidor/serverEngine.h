@@ -18,7 +18,7 @@
 #include <sys/types.h>
 #include "struct_defs.h"
 
-#define MAX_BUF 1024
+#define MAX_BUF 512
 
 typedef struct cliente{
     int ID;

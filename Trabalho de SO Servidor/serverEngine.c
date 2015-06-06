@@ -10,8 +10,12 @@
 
 void startServer(){
     cliente *head = malloc(sizeof(cliente));
+    head->next = NULL;
     pid_t pid_server = getpid();
     bool starting = true;
+    int numClientes = 0, i;
+    int clientes[128];
+    
     int client_to_server;
     char *myfifo = "/tmp/client_to_server_fifo";
     
@@ -39,16 +43,36 @@ void startServer(){
     printf("FIFO's criados\n");
     
     do{
-        int pid_temp;
+        pid_t pid_temp;
         dungeon *temp;
         
-        read(client_to_server, pid_temp, MAX_BUF);
+        read(client_to_server, pid_temp, sizeof(pid_t));
         read(client_to_server, temp, sizeof(dungeon));
-        addCliente(*head, pid_temp, temp);
+        
+        for (i = 0; i<numClientes; i++) {
+            if (clientes[i] == pid_temp) {
+                addCliente(*head, pid_temp, temp);
+            }
+        }
+        
+        numClientes++;
+        clientes[numClientes] = pid_temp;
     }while(starting);
 }
 
 void addCliente(cliente lista, int pid, dungeon *m){
+    int server_to_client;
+    char *myfifo2 = "/tmp/server_to_client_fifo";
+    
     printf("A adiconar cliente com PID %d\n", pid);
     
+    if (lista.next == NULL) {
+        server_to_client = open(myfifo2, O_WRONLY);
+        write(server_to_client, 1, sizeof(int));
+        close(server_to_client);
+    }
+    
+    lista.next = malloc(sizeof(cliente));
+    
+    printf("Cliente adicionado !\n");
 }

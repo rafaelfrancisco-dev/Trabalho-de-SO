@@ -9,7 +9,7 @@
 #include "jogoPrincipal.h"
 
 void comecarJogo(){
-    char nome[256];
+    char nome[64];
     sala *salas;
     dungeon masmorra;
     
@@ -70,7 +70,7 @@ void ligarServer(){
     close(server_to_client);
     
     client_to_server = open(myfifo, O_WRONLY);
-    write(client_to_server, getpid(), MAX_BUF);
+    write(client_to_server, getpid(), sizeof(pid_t));
     close(client_to_server);
     
     printf("Ligado ao servidor com o ID %d\n", getpid());
@@ -99,7 +99,7 @@ int verRole(){
 }
 
 void adminJogo(){
-    char entrada[256];
+    char entrada[64];
     char *temp;
     int valorTimeout, valorDificuldade;
     printf("Primeiro a juntar-se, admin de jogo\n");
