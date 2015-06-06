@@ -20,6 +20,7 @@ void comecarJogo(){
     
     masmorra = fazerDungeon(salas);
     alocarMonstro(masmorra);
+    ligarServer();
 }
 
 dungeon fazerDungeon(sala *salas){
@@ -47,4 +48,25 @@ dungeon fazerDungeon(sala *salas){
 
 void alocarMonstro(dungeon masmorra){
     
+}
+
+void ligarServer(){
+    int client_to_server;
+    char buf[MAX_BUF];
+    char *myfifo = "/tmp/client_to_server_fifo";
+    
+    int server_to_client;
+    char *myfifo2 = "/tmp/server_to_client_fifo";
+
+    server_to_client = open(myfifo2, O_RDONLY);
+    
+    read(server_to_client, buf, MAX_BUF);
+    printf("Recebido : %s\nTamanho: %d\n", buf, sizeof(buf));
+    close(server_to_client);
+    
+    client_to_server = open(myfifo, O_WRONLY);
+    write(client_to_server, getpid(), MAX_BUF);
+    close(client_to_server);
+    
+    printf("Ligado ao servidor com o ID %d\n", getpid());
 }

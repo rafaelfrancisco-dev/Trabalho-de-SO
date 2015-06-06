@@ -14,7 +14,20 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include <stdbool.h>
+#include <sys/stat.h>
+#include <sys/types.h>
+#include "struct_defs.h"
+
+#define MAX_BUF 1024
+
+typedef struct cliente{
+    int ID;
+    char nome[256];
+    dungeon masmorra;
+    struct cliente *next;
+}cliente;
 
 void startServer();
+void addCliente(cliente lista);
 
 #endif /* defined(__Trabalho_de_SO__serverEngine__) */

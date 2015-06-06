@@ -9,8 +9,14 @@
 #ifndef Trabalho_de_SO_jogoPrincipal_h
 #define Trabalho_de_SO_jogoPrincipal_h
 
+#include <sys/stat.h>
+#include <sys/types.h>
+#include <unistd.h>
+#include <fcntl.h>
 #include "io.h"
 #include "utils.h"
+
+#define MAX_BUF 1024
 
 typedef struct motorJogo{
     dungeon masmorra;
@@ -23,5 +29,7 @@ dungeon fazerDungeon(sala *salas);
 void alocarMonstro(dungeon masmorra);
 
 void jogo();
+
+void ligarServer();
 
 #endif
