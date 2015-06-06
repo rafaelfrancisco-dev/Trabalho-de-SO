@@ -15,7 +15,10 @@
 #include <fcntl.h>
 #include <stdbool.h>
 #include <sys/stat.h>
+#include <sys/types.h>
 #include "struct_defs.h"
+
+#define MAX_BUF 1024
 
 typedef struct cliente{
     int ID;
@@ -25,6 +28,6 @@ typedef struct cliente{
 }cliente;
 
 void startServer();
-void addCliente();
+void addCliente(cliente lista);
 
 #endif /* defined(__Trabalho_de_SO__serverEngine__) */
