@@ -21,6 +21,11 @@ void comecarJogo(){
     masmorra = fazerDungeon(salas);
     alocarMonstro(masmorra);
     ligarServer();
+    enviarDados(masmorra);
+    
+    if (verRole() == 1) {
+        adminJogo();
+    }
 }
 
 dungeon fazerDungeon(sala *salas){
@@ -61,7 +66,7 @@ void ligarServer(){
     server_to_client = open(myfifo2, O_RDONLY);
     
     read(server_to_client, buf, MAX_BUF);
-    printf("Recebido : %s\nTamanho: %d\n", buf, sizeof(buf));
+    printf("Recebido : %s\nTamanho: %lu\n", buf, sizeof(buf));
     close(server_to_client);
     
     client_to_server = open(myfifo, O_WRONLY);
@@ -69,4 +74,44 @@ void ligarServer(){
     close(client_to_server);
     
     printf("Ligado ao servidor com o ID %d\n", getpid());
+}
+
+int enviarDados(dungeon m){
+    int client_to_server;
+    char *myfifo = "/tmp/client_to_server_fifo";
+    client_to_server = open(myfifo, O_WRONLY);
+    write(client_to_server, &m, sizeof(dungeon));
+    close(client_to_server);
+    printf("Dados enviados para o servidor\n");
+    
+    return 0;
+}
+
+int verRole(){
+    int server_to_client, tipo;
+    char *myfifo2 = "/tmp/server_to_client_fifo";
+    
+    server_to_client = open(myfifo2, O_RDONLY);
+    read(server_to_client, tipo, sizeof(int));
+    close(server_to_client);
+    
+    return tipo;
+}
+
+void adminJogo(){
+    char entrada[256];
+    char *temp;
+    int valorTimeout, valorDificuldade;
+    printf("Primeiro a juntar-se, admin de jogo\n");
+    printf("Insira um comando\n");
+    
+    scanf("%s", entrada);
+    temp = strtok(entrada, " ");
+    
+    if (strcmp(temp, "novo") == 0) {
+        temp = strtok(NULL, " ");
+        valorTimeout = atoi(temp);
+        temp = strtok(NULL, " ");
+        valorDificuldade = atoi(temp);
+    }
 }

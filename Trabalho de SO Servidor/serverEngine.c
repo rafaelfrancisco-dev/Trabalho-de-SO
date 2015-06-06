@@ -10,8 +10,8 @@
 
 void startServer(){
     cliente *head = malloc(sizeof(cliente));
-    cliente *temp = NULL;
     pid_t pid_server = getpid();
+    bool starting = true;
     int client_to_server;
     char *myfifo = "/tmp/client_to_server_fifo";
     
@@ -22,7 +22,7 @@ void startServer(){
     mkfifo(myfifo, 0666);
     mkfifo(myfifo2, 0666);
     
-    pid_t child_pid = fork();
+    fork();
     pid_t child_ppid = getppid(); //get the child's parent pid
     
     if (child_ppid == pid_server) //if the current process is a child of the main process
@@ -40,11 +40,15 @@ void startServer(){
     
     do{
         int pid_temp;
+        dungeon *temp;
+        
         read(client_to_server, pid_temp, MAX_BUF);
-        addCliente(*head);
-    }while(true);
+        read(client_to_server, temp, sizeof(dungeon));
+        addCliente(*head, pid_temp, temp);
+    }while(starting);
 }
 
-void addCliente(cliente lista){
+void addCliente(cliente lista, int pid, dungeon *m){
+    printf("A adiconar cliente com PID %d\n", pid);
     
 }

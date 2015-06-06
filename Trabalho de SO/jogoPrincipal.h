@@ -32,4 +32,10 @@ void jogo();
 
 void ligarServer();
 
+int enviarDados(dungeon m);
+
+int verRole();
+
+void adminJogo();
+
 #endif

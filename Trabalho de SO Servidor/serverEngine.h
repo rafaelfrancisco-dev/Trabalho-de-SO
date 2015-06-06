@@ -28,6 +28,6 @@ typedef struct cliente{
 }cliente;
 
 void startServer();
-void addCliente(cliente lista);
+void addCliente(cliente lista, int pid, dungeon *m);
 
 #endif /* defined(__Trabalho_de_SO__serverEngine__) */
