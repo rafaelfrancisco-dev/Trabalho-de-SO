@@ -43,20 +43,20 @@ void startServer(){
     printf("FIFO's criados\n");
     
     do{
-        pid_t pid_temp;
+        pid_t *pid_temp;
         dungeon *temp;
         
         read(client_to_server, pid_temp, sizeof(pid_t));
         read(client_to_server, temp, sizeof(dungeon));
         
         for (i = 0; i<numClientes; i++) {
-            if (clientes[i] == pid_temp) {
-                addCliente(*head, pid_temp, temp);
+            if (clientes[i] == *pid_temp) {
+                addCliente(*head, *pid_temp, temp);
             }
         }
         
         numClientes++;
-        clientes[numClientes] = pid_temp;
+        clientes[numClientes] = *pid_temp;
     }while(starting);
 }
 
@@ -68,7 +68,7 @@ void addCliente(cliente lista, int pid, dungeon *m){
     
     if (lista.next == NULL) {
         server_to_client = open(myfifo2, O_WRONLY);
-        write(server_to_client, 1, sizeof(int));
+        write(server_to_client, "1", sizeof("1"));
         close(server_to_client);
     }
     

@@ -57,6 +57,7 @@ void alocarMonstro(dungeon masmorra){
 
 void ligarServer(){
     int client_to_server;
+    pid_t pid = getpid();
     char buf[MAX_BUF];
     char *myfifo = "/tmp/client_to_server_fifo";
     
@@ -70,7 +71,7 @@ void ligarServer(){
     close(server_to_client);
     
     client_to_server = open(myfifo, O_WRONLY);
-    write(client_to_server, getpid(), sizeof(pid_t));
+    write(client_to_server, &pid, sizeof(pid_t));
     close(client_to_server);
     
     printf("Ligado ao servidor com o ID %d\n", getpid());
@@ -88,14 +89,19 @@ int enviarDados(dungeon m){
 }
 
 int verRole(){
-    int server_to_client, tipo;
+    int server_to_client;
+    char *tipo;
     char *myfifo2 = "/tmp/server_to_client_fifo";
     
     server_to_client = open(myfifo2, O_RDONLY);
-    read(server_to_client, tipo, sizeof(int));
+    read(server_to_client, &tipo, sizeof("1"));
     close(server_to_client);
     
-    return tipo;
+    if (strcmp(tipo, "1") == 0) {
+        return 1;
+    }
+    else
+        return 0;
 }
 
 void adminJogo(){
