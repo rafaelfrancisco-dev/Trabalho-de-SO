@@ -20,3 +20,7 @@ int count(sala *head)
     }
     return c;
 }
+
+void ClearScreen(){
+   
+}

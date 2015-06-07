@@ -59,7 +59,7 @@ void startServer(){
         pid_t pid_temp;
         dungeon temp;
         
-        server_to_client = open(myfifo2, O_WRONLY);
+        server_to_client = open(myfifo2, O_RDWR);
         
         write(server_to_client, "Server ligado", sizeof("Server ligado"));
         close(server_to_client);
