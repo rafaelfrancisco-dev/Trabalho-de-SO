@@ -16,9 +16,12 @@
 #include <stdbool.h>
 #include <sys/stat.h>
 #include <sys/types.h>
+#include <string.h>
 #include "struct_defs.h"
 
 #define MAX_BUF 512
+
+int pids[128];
 
 typedef struct cliente{
     int quantidade_clientes;

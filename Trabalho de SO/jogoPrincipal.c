@@ -94,18 +94,22 @@ int enviarDados(dungeon m){
 
 int verRole(){
     int server_to_client;
-    char *tipo = " ";
+    char *tipo = "0";
     char *myfifo2 = "/tmp/server_to_client_fifo";
     
     server_to_client = open(myfifo2, O_RDONLY);
     read(server_to_client, &tipo, MAX_BUF);
+    read(server_to_client, &tipo, MAX_BUF);       //Sincronizaçao mal aqui, por isso a parte de jogador admin e ignorada
+    read(server_to_client, &tipo, MAX_BUF);
     close(server_to_client);
     
-    if (strcmp(tipo, "1") == 0) {
+    /*if (strcmp(tipo, "1") == 0) {
         return 1;
     }
     else
-        return 0;
+        return 0;*/
+    
+    return 0;
 }
 
 void adminJogo(){

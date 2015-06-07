@@ -19,6 +19,8 @@
 
 #define MAX_BUF 512
 
+int server_pid;
+
 typedef struct motorJogo{
     dungeon masmorra;
 }motorJogo;

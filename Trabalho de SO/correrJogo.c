@@ -21,6 +21,22 @@ void jogoNormal(){
 int lerComando(){
     char *entrada, *temp;
     
+    printf("Insira um comando: \n");
+    scanf("%s", entrada);
+    
+    temp = strtok(entrada, " ");
+    
+    if (strcmp(temp, "jogar") == 0) {
+        jogar();
+    }
+    if(strcmp(temp, "sair") == 0){
+        
+        exit(0);
+    }
     
     return 0;
+}
+
+void jogar(){
+    
 }
