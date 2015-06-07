@@ -27,6 +27,9 @@ void handle_signal(int signal) {
         case SIGINT:
             printf("Caught SIGINT, exiting now\n");
             exit(0);
+        case SIGTERM:
+            printf("Apanhado SIGTERM, a sair do servidor...\n");
+            exit(0);
         default:
             fprintf(stderr, "Caught wrong signal: %d\n", signal);
             return;

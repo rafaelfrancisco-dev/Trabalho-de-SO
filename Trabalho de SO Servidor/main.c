@@ -36,12 +36,14 @@ int main(int argc, const char * argv[]) {
     
     // Will always fail, SIGKILL is intended to force kill your process
     if (sigaction(SIGKILL, &sa, NULL) == -1) {
-        perror("Cannot handle SIGKILL"); // Will always happen
-        printf("You can never handle SIGKILL anyway...\n");
     }
     
     if (sigaction(SIGINT, &sa, NULL) == -1) {
         perror("Error: cannot handle SIGINT"); // Should not happen
+    }
+    
+    if (sigaction(SIGTERM, &sa, NULL) == -1) {
+        perror("Error: cannot handle SIGTERM");
     }
     
     printf("Servidor iniciado com o PID %d...\n", getpid());
