@@ -19,6 +19,8 @@
 
 #define MAX_BUF 512
 
+int server_pid;
+
 typedef struct motorJogo{
     dungeon masmorra;
 }motorJogo;
@@ -31,7 +33,7 @@ void alocarMonstro(dungeon masmorra);
 
 void jogo();
 
-void ligarServer();
+void ligarServer(dungeon masm);
 
 int enviarDados(dungeon m);
 

@@ -20,8 +20,7 @@ void comecarJogo(){
     
     masmorra = fazerDungeon(salas);
     alocarMonstro(masmorra);
-    ligarServer();
-    enviarDados(masmorra);
+    ligarServer(masmorra);
     
     if (verRole() == 1) {
         adminJogo();
@@ -58,7 +57,7 @@ void alocarMonstro(dungeon masmorra){
     
 }
 
-void ligarServer(){
+void ligarServer(dungeon masm){
     int client_to_server;
     pid_t pid = getpid();
     char buf[MAX_BUF];
@@ -66,16 +65,18 @@ void ligarServer(){
     
     int server_to_client;
     char *myfifo2 = "/tmp/server_to_client_fifo";
-
+    
+    client_to_server = open(myfifo, O_WRONLY);
+    write(client_to_server, &pid, sizeof(pid_t));
+    close(client_to_server);
+    
+    enviarDados(masm);
+    
     server_to_client = open(myfifo2, O_RDONLY);
     
     read(server_to_client, buf, MAX_BUF);
     printf("Recebido : %s\nTamanho: %lu\n", buf, sizeof(buf));
     close(server_to_client);
-    
-    client_to_server = open(myfifo, O_WRONLY);
-    write(client_to_server, &pid, sizeof(pid_t));
-    close(client_to_server);
     
     printf("Ligado ao servidor com o ID %d\n", getpid());
 }
@@ -84,7 +85,7 @@ int enviarDados(dungeon m){
     int client_to_server;
     char *myfifo = "/tmp/client_to_server_fifo";
     client_to_server = open(myfifo, O_WRONLY);
-    write(client_to_server, &m, sizeof(dungeon));
+    write(client_to_server, &m, sizeof(m));
     close(client_to_server);
     printf("Dados enviados para o servidor\n");
     
@@ -93,18 +94,22 @@ int enviarDados(dungeon m){
 
 int verRole(){
     int server_to_client;
-    char *tipo = " ";
+    char *tipo = "0";
     char *myfifo2 = "/tmp/server_to_client_fifo";
     
     server_to_client = open(myfifo2, O_RDONLY);
-    read(server_to_client, &tipo, sizeof("1"));
+    read(server_to_client, &tipo, MAX_BUF);
+    read(server_to_client, &tipo, MAX_BUF);       //Sincronizaçao mal aqui, por isso a parte de jogador admin e ignorada
+    read(server_to_client, &tipo, MAX_BUF);
     close(server_to_client);
     
-    if (strcmp(tipo, "1") == 0) {
+    /*if (strcmp(tipo, "1") == 0) {
         return 1;
     }
     else
-        return 0;
+        return 0;*/
+    
+    return 0;
 }
 
 void adminJogo(){

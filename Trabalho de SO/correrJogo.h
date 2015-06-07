@@ -15,9 +15,12 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include <string.h>
+#include <signal.h>
 
 void jogoNormal();
 
 int lerComando();
+
+void jogar();
 
 #endif /* defined(__Trabalho_de_SO__correrJogo__) */
