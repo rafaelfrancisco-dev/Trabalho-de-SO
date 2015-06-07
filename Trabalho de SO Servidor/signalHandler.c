@@ -20,6 +20,8 @@ void handle_signal(int signal) {
     switch (signal) {
         case SIGHUP:
             signal_name = "SIGHUP";
+            printf("A reiniciar o servidor...");
+            main();
             break;
         case SIGUSR1:
             signal_name = "SIGUSR1";

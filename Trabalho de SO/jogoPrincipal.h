@@ -15,6 +15,7 @@
 #include <fcntl.h>
 #include "io.h"
 #include "utils.h"
+#include "correrJogo.h"
 
 #define MAX_BUF 512
 

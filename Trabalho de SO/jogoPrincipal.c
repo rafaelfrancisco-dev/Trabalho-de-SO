@@ -26,6 +26,9 @@ void comecarJogo(){
     if (verRole() == 1) {
         adminJogo();
     }
+    else{
+        jogoNormal();
+    }
 }
 
 dungeon fazerDungeon(sala *salas){
@@ -90,7 +93,7 @@ int enviarDados(dungeon m){
 
 int verRole(){
     int server_to_client;
-    char *tipo;
+    char *tipo = " ";
     char *myfifo2 = "/tmp/server_to_client_fifo";
     
     server_to_client = open(myfifo2, O_RDONLY);
