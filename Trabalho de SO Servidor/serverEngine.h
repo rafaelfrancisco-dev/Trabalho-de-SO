@@ -18,7 +18,7 @@
 #include <sys/types.h>
 #include "struct_defs.h"
 
-#define MAX_BUF 1024
+#define MAX_BUF 512
 
 typedef struct cliente{
     int ID;
@@ -28,6 +28,6 @@ typedef struct cliente{
 }cliente;
 
 void startServer();
-void addCliente(cliente lista);
+void addCliente(cliente lista, int pid, dungeon *m);
 
 #endif /* defined(__Trabalho_de_SO__serverEngine__) */

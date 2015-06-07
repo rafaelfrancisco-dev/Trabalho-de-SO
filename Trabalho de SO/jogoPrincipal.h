@@ -15,8 +15,9 @@
 #include <fcntl.h>
 #include "io.h"
 #include "utils.h"
+#include "correrJogo.h"
 
-#define MAX_BUF 1024
+#define MAX_BUF 512
 
 typedef struct motorJogo{
     dungeon masmorra;
@@ -31,5 +32,11 @@ void alocarMonstro(dungeon masmorra);
 void jogo();
 
 void ligarServer();
+
+int enviarDados(dungeon m);
+
+int verRole();
+
+void adminJogo();
 
 #endif
