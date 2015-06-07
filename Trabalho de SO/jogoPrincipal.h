@@ -31,7 +31,7 @@ void alocarMonstro(dungeon masmorra);
 
 void jogo();
 
-void ligarServer();
+void ligarServer(dungeon masm);
 
 int enviarDados(dungeon m);
 

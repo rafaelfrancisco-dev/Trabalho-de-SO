@@ -9,6 +9,8 @@
 #include "correrJogo.h"
 
 void jogoNormal(){
+    printf("Juntando-se como jogador normal\n");
+    
     for(;;){
         if (lerComando() == 1) {
             break;
