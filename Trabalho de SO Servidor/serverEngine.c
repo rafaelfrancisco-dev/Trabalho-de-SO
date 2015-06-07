@@ -52,6 +52,7 @@ void startServer(){
         printf("A começar jogo...\n");
         fflush(stdout);
         fflush(stdin);
+        jogo();
         exit(1); //making sure to avoid fork bomb
     }
     
@@ -109,4 +110,12 @@ void addCliente(cliente *lista, int pid, dungeon mas){
     lista->next = NULL;
     
     printf("Cliente adicionado !\n");
+}
+
+void jogo(){
+    printf("Modo de jogo inicializado\n");
+    
+    for(;;){
+        
+    }
 }
