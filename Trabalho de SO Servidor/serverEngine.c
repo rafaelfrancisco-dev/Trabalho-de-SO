@@ -113,9 +113,31 @@ void addCliente(cliente *lista, int pid, dungeon mas){
 }
 
 void jogo(){
+    int jogo_fifo;
+    char *jogofifo = "/tmp/special_fifo";
+    char buf[MAX_BUF];
+    
+    unlink(jogofifo);
+    mkfifo(jogofifo, 0666);
+    
     printf("Modo de jogo inicializado\n");
     
     for(;;){
+        jogo_fifo = open(jogofifo, O_RDWR);
+        read(jogo_fifo, buf, MAX_BUF);
         
+        if (strcmp(buf, "terminar") == 0) {
+            terminar_clientes();
+        }
+        
+        close(jogo_fifo);
+    }
+}
+
+void terminar_clientes(){
+    int i;
+    
+    for (i = 0; i<128; i++) {
+        kill(pids[i], SIGTERM);
     }
 }

@@ -20,6 +20,7 @@ void jogoNormal(){
 }
 
 int lerComando(){
+    bool check_jogo = false;
     char entrada[64], *temp;
     
     printf("Insira um comando: \n");
@@ -28,11 +29,21 @@ int lerComando(){
     temp = strtok(entrada, " ");
     
     if (strcmp(temp, "jogar") == 0) {
+        check_jogo = true;
         jogar();
     }
     if(strcmp(temp, "sair") == 0){
         
         exit(0);
+    }
+    if (strcmp(temp, "terminar") == 0 && check_jogo == true) {
+        int jogo_fifo;
+        char *jogofifo = "/tmp/special_fifo";
+
+        jogo_fifo = open(jogofifo, O_RDWR);
+        write(jogo_fifo, "terminar", sizeof("terminar"));
+        close(jogo_fifo);
+        main();
     }
     
     return 0;

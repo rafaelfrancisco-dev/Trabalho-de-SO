@@ -16,6 +16,7 @@
 #include <fcntl.h>
 #include <string.h>
 #include <signal.h>
+#include <stdbool.h>
 
 void jogoNormal();
 
