@@ -45,7 +45,7 @@ void startServer(){
 
     /* open, read, and display the message from the FIFO */
     client_to_server = open(myfifo, O_RDONLY);
-    printf("FIFO's criados\n");
+    printf("FIFO's abertos\n");
     
     do{
         pid_t pid_temp;
