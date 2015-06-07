@@ -13,8 +13,6 @@ void startServer(){
     head->next = NULL;
     pid_t pid_server = getpid();
     bool starting = true;
-    int numClientes = 0, i;
-    int clientes[128];
     
     int client_to_server;
     char *myfifo = "/tmp/client_to_server_fifo";
@@ -48,15 +46,8 @@ void startServer(){
         
         read(client_to_server, pid_temp, sizeof(pid_t));
         read(client_to_server, temp, sizeof(dungeon));
-        
-        for (i = 0; i<numClientes; i++) {
-            if (clientes[i] == *pid_temp) {
-                addCliente(*head, *pid_temp, temp);
-            }
-        }
-        
-        numClientes++;
-        clientes[numClientes] = *pid_temp;
+       
+        addCliente(*head, *pid_temp, temp);
     }while(starting);
 }
 
